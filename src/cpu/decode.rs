@@ -34,4 +34,10 @@ mod testd {
         let inst = decode(opcode);
         assert_eq!(inst, Inst::B(0xa, -1));
     }
+    #[test]
+    fn bl() {
+        let opcode = 0xabffffff; // 0b 1010_101_1_1..1
+        let inst = decode(opcode);
+        assert_eq!(inst, Inst::BL(0xa, -1));
+    }
 }
